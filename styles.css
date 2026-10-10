@@ -41,7 +41,7 @@
 }
 
 html {
-  scroll-behavior: smooth;
+  scroll-behavior: auto;
 }
 
 body {
@@ -526,5 +526,33 @@ img {
   }
   .home__img {
     width: 450px;
+  }
+}
+
+/* ===== CINEMATIC SMOOTH SCROLL ===== */
+
+/* Let Lenis manage scroll interpolation */
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+/* Keep anchor destinations clear of the fixed header */
+section[id] {
+  scroll-margin-top: 5rem;
+}
+
+/* Respect users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto !important;
   }
 }
