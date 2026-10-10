@@ -1167,3 +1167,8 @@ body.projector-portfolio {
     text-align: center;
   }
 }
+
+/* Hide the numbered section navigation */
+.projector-portfolio .scene-index {
+  display: none !important;
+}
