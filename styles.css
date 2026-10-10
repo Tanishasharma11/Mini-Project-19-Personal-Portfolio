@@ -1129,3 +1129,41 @@ body.projector-portfolio {
 @media (prefers-reduced-motion: reduce) {
   .scene-panel, .projection-beam { transition: none !important; }
 }
+
+
+/* Footer projector image */
+.projector-portfolio .projector-footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 20px clamp(22px, 5vw, 76px) 14px;
+  background: #fff;
+  color: #8994a9;
+}
+
+.projector-portfolio .footer-projector-image {
+  display: block;
+  width: min(428px, 76vw);
+  height: auto;
+  max-width: 100%;
+  margin: 0 auto;
+  object-fit: contain;
+}
+
+.projector-footer__bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  width: 100%;
+  font-size: 0.66rem;
+}
+
+@media (max-width: 480px) {
+  .projector-footer__bottom {
+    flex-direction: column;
+    gap: 6px;
+    text-align: center;
+  }
+}
