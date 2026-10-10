@@ -1,179 +1,178 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#ffffff">
-  <title>Tanisha Sharma | Portfolio</title>
-  <link rel="stylesheet" href="styles.css">
-  <link href="https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#ffffff">
+  <title>Tanisha Sharma | Portfolio</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css" rel="stylesheet">
 </head>
 <body class="projector-portfolio">
-  <!-- Header -->
-  <header class="l-header">
-    <nav class="nav bd-grid" aria-label="Main navigation">
-      <div><a href="#home" class="nav__logo" data-scene-link="home">Tanisha<span class="logo-dot">.</span></a></div>
-      <div class="nav__menu" id="nav-menu">
-        <ul class="nav__list">
-          <li class="nav__item"><a href="#home" class="nav__link active" data-scene-link="home">Home</a></li>
-          <li class="nav__item"><a href="#skills" class="nav__link" data-scene-link="skills">Skills</a></li>
-          <li class="nav__item"><a href="#work" class="nav__link" data-scene-link="work">Projects</a></li>
-          <li class="nav__item"><a href="#contact" class="nav__link" data-scene-link="contact">Contact</a></li>
-        </ul>
-      </div>
-      <button class="nav__toggle" id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false" type="button">
-        <i class="bx bx-menu"></i>
-      </button>
-    </nav>
-  </header>
+  <!-- Header: original Bedimcode navigation structure retained -->
+  <header class="l-header">
+    <nav class="nav bd-grid" aria-label="Main navigation">
+      <div><a href="#home" class="nav__logo" data-scene-link="home">Tanisha<span class="logo-dot">.</span></a></div>
+      <div class="nav__menu" id="nav-menu">
+        <ul class="nav__list">
+          <li class="nav__item"><a href="#home" class="nav__link active" data-scene-link="home">Home</a></li>
+          <li class="nav__item"><a href="#skills" class="nav__link" data-scene-link="skills">Skills</a></li>
+          <li class="nav__item"><a href="#work" class="nav__link" data-scene-link="work">Projects</a></li>
+          <li class="nav__item"><a href="#contact" class="nav__link" data-scene-link="contact">Contact</a></li>
+        </ul>
+      </div>
+      <button class="nav__toggle" id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false" type="button">
+        <i class="bx bx-menu"></i>
+      </button>
+    </nav>
+  </header>
 
-  <main class="l-main projector-main">
-    <div class="projector-stage" id="portfolio-stage" data-scene="home">
-      <div class="stage-meta stage-meta-left"><span class="status-dot"></span> PERSONAL PORTFOLIO <span class="meta-slash">/</span> </div>
-      
+  <main class="l-main projector-main">
+    <div class="projector-stage" id="portfolio-stage" data-scene="home">
+      <div class="stage-meta stage-meta-left"><span class="status-dot"></span> PERSONAL PORTFOLIO <span class="meta-slash">/</span> INTERACTIVE EDITION</div>
+      <div class="stage-meta stage-meta-right"><span id="scene-number">01</span><span id="scene-name">HOME</span></div>
 
-      <aside class="scene-index" aria-label="Portfolio sections">
-        <button class="scene-index__button active" type="button" data-scene-link="home" aria-label="Go to Home">01</button>
-        <button class="scene-index__button" type="button" data-scene-link="skills" aria-label="Go to Skills">02</button>
-        <button class="scene-index__button" type="button" data-scene-link="work" aria-label="Go to Projects">03</button>
-        <button class="scene-index__button" type="button" data-scene-link="contact" aria-label="Go to Contact">04</button>
-      </aside>
+      <aside class="scene-index" aria-label="Portfolio sections">
+        <button class="scene-index__button active" type="button" data-scene-link="home" aria-label="Go to Home">01</button>
+        <button class="scene-index__button" type="button" data-scene-link="skills" aria-label="Go to Skills">02</button>
+        <button class="scene-index__button" type="button" data-scene-link="work" aria-label="Go to Projects">03</button>
+        <button class="scene-index__button" type="button" data-scene-link="contact" aria-label="Go to Contact">04</button>
+      </aside>
 
-      <div class="projection-beam" aria-hidden="true"></div>
-      <div class="projection-floor-glow" aria-hidden="true"></div>
+      <div class="projection-beam" aria-hidden="true"></div>
+      <div class="projection-floor-glow" aria-hidden="true"></div>
 
-      <!-- HOME + ABOUT: combined into one panel -->
-      <section class="scene-panel home-panel is-active" id="home" data-panel="home" aria-labelledby="home-title">
-        <div class="panel-kicker">HELLO, </div>
-        <div class="home-panel__content">
-          <div class="home__data">
-            <h1 class="home__title" id="home-title">HI I'm Tanisha Sharma Junior Developer at
-           <span class="home__title-color">ABInBev GCC India</span> </h1>
-            <p class="home-intro">I'm Tanisha Sharma — a Computer Science graduate from TIET with an AI specialization, interested in data, financial planning, and practical AI solutions.</p>
-            <p class="home-about">My experience spans working on analytics workflows and AI projects. I enjoy turning complex problems into clear, useful outcomes — and yes, I'm an avid car enthusiast.</p>
-            <div class="home-actions">
-              <!-- Replace the # below with the URL/path to your resume PDF -->
-              <a href="#" class="button" id="resume-link">My Resume <i class="bx bx-up-right-arrow-alt"></i></a>
-              <a href="https://www.linkedin.com/" class="quiet-link" target="_blank" rel="noreferrer">Connect with me <i class="bx bx-right-arrow-alt"></i></a>
-            </div>
-            <div class="home__social">
-              <!-- Replace these profile URLs with your exact profile links if needed -->
-              <a href="https://www.linkedin.com/" class="home__social-icon" aria-label="LinkedIn" target="_blank" rel="noreferrer"><i class="bx bxl-linkedin"></i></a>
-              <a href="https://github.com/Tanishasharma11" class="home__social-icon" aria-label="GitHub" target="_blank" rel="noreferrer"><i class="bx bxl-github"></i></a>
-            </div>
-          </div>
-          <div class="home-visual" aria-hidden="true">
-            <div class="home-visual__orbit"></div>
-            <div class="home-visual__monogram">TS<span>.</span></div>
-            <div class="home-visual__caption">TECHNOLOGY · DATA · IDEAS</div>
-          </div>
-        </div>
-      </section>
+      <!-- HOME + ABOUT: combined into one panel -->
+      <section class="scene-panel home-panel is-active" id="home" data-panel="home" aria-labelledby="home-title">
+        <div class="panel-kicker">HELLO, I'M TANISHA</div>
+        <div class="home-panel__content">
+          <div class="home__data">
+            <h1 class="home__title" id="home-title">Building at the intersection of <span class="home__title-color">technology</span> and business.</h1>
+            <p class="home-intro">I'm Tanisha Sharma — a Computer Science graduate with an AI specialization, interested in data, financial planning, and practical AI solutions.</p>
+            <p class="home-about">My experience spans Anaplan financial planning models, analytics workflows, and AI projects. I enjoy turning complex problems into clear, useful outcomes — and yes, I'm an avid car enthusiast.</p>
+            <div class="home-actions">
+              <!-- Replace the # below with the URL/path to your resume PDF -->
+              <a href="#" class="button" id="resume-link">My Resume <i class="bx bx-up-right-arrow-alt"></i></a>
+              <a href="https://www.linkedin.com/" class="quiet-link" target="_blank" rel="noreferrer">Connect with me <i class="bx bx-right-arrow-alt"></i></a>
+            </div>
+            <div class="home__social">
+              <!-- Replace these profile URLs with your exact profile links if needed -->
+              <a href="https://www.linkedin.com/" class="home__social-icon" aria-label="LinkedIn" target="_blank" rel="noreferrer"><i class="bx bxl-linkedin"></i></a>
+              <a href="https://github.com/Tanishasharma11" class="home__social-icon" aria-label="GitHub" target="_blank" rel="noreferrer"><i class="bx bxl-github"></i></a>
+            </div>
+          </div>
+          <div class="home-visual" aria-hidden="true">
+            <div class="home-visual__orbit"></div>
+            <div class="home-visual__monogram">TS<span>.</span></div>
+            <div class="home-visual__caption">TECHNOLOGY · DATA · IDEAS</div>
+          </div>
+        </div>
+      </section>
 
-      <!-- SKILLS: existing Bedimcode skills content and classes retained -->
-      <section class="scene-panel skills-panel" id="skills" data-panel="skills" aria-labelledby="skills-title" hidden>
-        <div class="panel-kicker">TOOLS & TECHNOLOGIES</div>
-        <h2 class="section-title" id="skills-title">Skills<span class="home__title-color">.</span></h2>
-        <div class="skills__container bd-grid">
-          <div>
-            <h3 class="skills__subtitle">Technical toolkit</h3>
-            <p class="skills__text">A mix of programming, analytics, and planning tools I have worked with.</p>
-            <div class="skills__data">
-              <div class="skills__names"><i class="bx bxl-python skills__icon"></i><span class="skills__name">Python</span></div>
-              <div class="skills__bar skills__python"></div><div><span class="skills__percentage">AI / data</span></div>
-            </div>
-            <div class="skills__data">
-              <div class="skills__names"><i class="bx bx-grid-alt skills__icon"></i><span class="skills__name">Anaplan</span></div>
-              <div class="skills__bar skills__anaplan"></div><div><span class="skills__percentage">Planning</span></div>
-            </div>
-            <div class="skills__data">
-              <div class="skills__names"><i class="bx bx-data skills__icon"></i><span class="skills__name">SQL & Data</span></div>
-              <div class="skills__bar skills__sql"></div><div><span class="skills__percentage">Analytics</span></div>
-            </div>
-            <div class="skills__data">
-              <div class="skills__names"><i class="bx bx-bar-chart-alt-2 skills__icon"></i><span class="skills__name">Power BI</span></div>
-              <div class="skills__bar skills__powerbi"></div><div><span class="skills__percentage">Reporting</span></div>
-            </div>
-            <div class="skills__data">
-              <div class="skills__names"><i class="bx bx-brain skills__icon"></i><span class="skills__name">Machine Learning</span></div>
-              <div class="skills__bar skills__ml"></div><div><span class="skills__percentage">AI projects</span></div>
-            </div>
-          </div>
-          <div class="skills-side-note">
-            
-            <p>Learn continuously.<br><strong>Build thoughtfully.</strong></p>
-            <span class="skills-side-note__small">PROGRAMMING / PLANNING / ANALYTICS</span>
-          </div>
-        </div>
-        <p class="skills-disclaimer">Skill bars are visual indicators, not formal proficiency scores.</p>
-      </section>
+      <!-- SKILLS: existing Bedimcode skills content and classes retained -->
+      <section class="scene-panel skills-panel" id="skills" data-panel="skills" aria-labelledby="skills-title" hidden>
+        <div class="panel-kicker">TOOLS & TECHNOLOGIES</div>
+        <h2 class="section-title" id="skills-title">Skills<span class="home__title-color">.</span></h2>
+        <div class="skills__container bd-grid">
+          <div>
+            <h3 class="skills__subtitle">Technical toolkit</h3>
+            <p class="skills__text">A mix of programming, analytics, and planning tools I have worked with.</p>
+            <div class="skills__data">
+              <div class="skills__names"><i class="bx bxl-python skills__icon"></i><span class="skills__name">Python</span></div>
+              <div class="skills__bar skills__python"></div><div><span class="skills__percentage">AI / data</span></div>
+            </div>
+            <div class="skills__data">
+              <div class="skills__names"><i class="bx bx-grid-alt skills__icon"></i><span class="skills__name">Anaplan</span></div>
+              <div class="skills__bar skills__anaplan"></div><div><span class="skills__percentage">Planning</span></div>
+            </div>
+            <div class="skills__data">
+              <div class="skills__names"><i class="bx bx-data skills__icon"></i><span class="skills__name">SQL & Data</span></div>
+              <div class="skills__bar skills__sql"></div><div><span class="skills__percentage">Analytics</span></div>
+            </div>
+            <div class="skills__data">
+              <div class="skills__names"><i class="bx bx-bar-chart-alt-2 skills__icon"></i><span class="skills__name">Power BI</span></div>
+              <div class="skills__bar skills__powerbi"></div><div><span class="skills__percentage">Reporting</span></div>
+            </div>
+            <div class="skills__data">
+              <div class="skills__names"><i class="bx bx-brain skills__icon"></i><span class="skills__name">Machine Learning</span></div>
+              <div class="skills__bar skills__ml"></div><div><span class="skills__percentage">AI projects</span></div>
+            </div>
+          </div>
+          <div class="skills-side-note">
+            <span class="skills-side-note__number">04</span>
+            <p>Learn continuously.<br><strong>Build thoughtfully.</strong></p>
+            <span class="skills-side-note__small">PROGRAMMING / PLANNING / ANALYTICS</span>
+          </div>
+        </div>
+        <p class="skills-disclaimer">Skill bars are visual indicators, not formal proficiency scores.</p>
+      </section>
 
-      <!-- PROJECTS: original project name and GitHub URL retained -->
-      <section class="scene-panel work-panel" id="work" data-panel="work" aria-labelledby="work-title" hidden>
-        <div class="panel-kicker">SELECTED WORK</div>
-        <h2 class="section-title" id="work-title">Projects<span class="home__title-color">.</span></h2>
-        <div class="work__container bd-grid">
-          <article class="project-card">
-            <div class="project-art" aria-label="Stylized computer vision road illustration">
-              <div class="project-art__horizon"></div><div class="project-art__road"></div>
-              <div class="project-art__lane project-art__lane--one"></div><div class="project-art__lane project-art__lane--two"></div>
-              <span class="project-art__label">COMPUTER VISION / 01</span>
-            </div>
-            <div class="project-card__body">
-              <div class="project-card__eyebrow">IMAGE PROCESSING</div>
-              <h3>Finding Lanes in Image</h3>
-              <p>A computer-vision project focused on identifying road lanes in images using image-processing techniques.</p>
-              <div class="project-tags"><span>Python</span><span>OpenCV</span><span>Computer Vision</span></div>
-              <a class="quiet-link" href="https://github.com/Tanishasharma11/Finding-Lanes-In-Image" target="_blank" rel="noreferrer">View project on GitHub <i class="bx bx-up-right-arrow-alt"></i></a>
-            </div>
-          </article>
-          <article class="project-card project-card--text">
-            <div class="project-card__eyebrow">MORE COMING SOON</div>
-            <div class="project-card__monogram">AI<span>×</span>DATA</div>
-            <h3>Ideas into useful outcomes.</h3>
-            <p>This space can feature additional AI/ADAS work, data workflows, and financial planning solutions as you choose which projects to publish.</p>
-            <a class="quiet-link" href="https://github.com/Tanishasharma11" target="_blank" rel="noreferrer">Explore my GitHub <i class="bx bx-up-right-arrow-alt"></i></a>
-          </article>
-        </div>
-      </section>
+      <!-- PROJECTS: original project name and GitHub URL retained -->
+      <section class="scene-panel work-panel" id="work" data-panel="work" aria-labelledby="work-title" hidden>
+        <div class="panel-kicker">SELECTED WORK</div>
+        <h2 class="section-title" id="work-title">Projects<span class="home__title-color">.</span></h2>
+        <div class="work__container bd-grid">
+          <article class="project-card">
+            <div class="project-art" aria-label="Stylized computer vision road illustration">
+              <div class="project-art__horizon"></div><div class="project-art__road"></div>
+              <div class="project-art__lane project-art__lane--one"></div><div class="project-art__lane project-art__lane--two"></div>
+              <span class="project-art__label">COMPUTER VISION / 01</span>
+            </div>
+            <div class="project-card__body">
+              <div class="project-card__eyebrow">IMAGE PROCESSING</div>
+              <h3>Finding Lanes in Image</h3>
+              <p>A computer-vision project focused on identifying road lanes in images using image-processing techniques.</p>
+              <div class="project-tags"><span>Python</span><span>OpenCV</span><span>Computer Vision</span></div>
+              <a class="quiet-link" href="https://github.com/Tanishasharma11/Finding-Lanes-In-Image" target="_blank" rel="noreferrer">View project on GitHub <i class="bx bx-up-right-arrow-alt"></i></a>
+            </div>
+          </article>
+          <article class="project-card project-card--text">
+            <div class="project-card__eyebrow">MORE COMING SOON</div>
+            <div class="project-card__monogram">AI<span>×</span>DATA</div>
+            <h3>Ideas into useful outcomes.</h3>
+            <p>This space can feature additional AI/ADAS work, data workflows, and financial planning solutions as you choose which projects to publish.</p>
+            <a class="quiet-link" href="https://github.com/Tanishasharma11" target="_blank" rel="noreferrer">Explore my GitHub <i class="bx bx-up-right-arrow-alt"></i></a>
+          </article>
+        </div>
+      </section>
 
-      <!-- CONTACT: existing fields retained; submit opens the visitor's email app -->
-      <section class="scene-panel contact-panel" id="contact" data-panel="contact" aria-labelledby="contact-title" hidden>
-        <div class="panel-kicker">LET'S CONNECT</div>
-        <div class="contact-layout">
-          <div class="contact-copy">
-            <h2 class="section-title" id="contact-title">Let's make something <span class="home__title-color">meaningful.</span></h2>
-            <p>I'm open to conversations about technology, analytics, AI, and interesting opportunities.</p>
-            <a href="https://github.com/Tanishasharma11" class="quiet-link" target="_blank" rel="noreferrer">GitHub <i class="bx bx-up-right-arrow-alt"></i></a>
-          </div>
-          <form class="contact__form" id="contact-form">
-            <label class="visually-hidden" for="contact-name">Name</label>
-            <input type="text" id="contact-name" placeholder="Name" class="contact__input" required>
-            <label class="visually-hidden" for="contact-email">Email</label>
-            <input type="email" id="contact-email" placeholder="Email" class="contact__input" required>
-            <label class="visually-hidden" for="contact-message">Message</label>
-            <textarea id="contact-message" placeholder="Message" rows="4" class="contact__input" required></textarea>
-            <button type="submit" class="contact__button button">Compose email <i class="bx bx-send"></i></button>
-            <p class="contact-form-note">This opens your email app; it does not send or store messages on this website.</p>
-          </form>
-        </div>
-      </section>
+      <!-- CONTACT: existing fields retained; submit opens the visitor's email app -->
+      <section class="scene-panel contact-panel" id="contact" data-panel="contact" aria-labelledby="contact-title" hidden>
+        <div class="panel-kicker">LET'S CONNECT</div>
+        <div class="contact-layout">
+          <div class="contact-copy">
+            <h2 class="section-title" id="contact-title">Let's make something <span class="home__title-color">meaningful.</span></h2>
+            <p>I'm open to conversations about technology, analytics, AI, and interesting opportunities.</p>
+            <a href="https://github.com/Tanishasharma11" class="quiet-link" target="_blank" rel="noreferrer">GitHub <i class="bx bx-up-right-arrow-alt"></i></a>
+          </div>
+          <form class="contact__form" id="contact-form">
+            <label class="visually-hidden" for="contact-name">Name</label>
+            <input type="text" id="contact-name" placeholder="Name" class="contact__input" required>
+            <label class="visually-hidden" for="contact-email">Email</label>
+            <input type="email" id="contact-email" placeholder="Email" class="contact__input" required>
+            <label class="visually-hidden" for="contact-message">Message</label>
+            <textarea id="contact-message" placeholder="Message" rows="4" class="contact__input" required></textarea>
+            <button type="submit" class="contact__button button">Compose email <i class="bx bx-send"></i></button>
+            <p class="contact-form-note">This opens your email app; it does not send or store messages on this website.</p>
+          </form>
+        </div>
+      </section>
 
-      <!-- Sleek horizontal projector: intentionally layered above the light beam -->
-      <div class="projector-device" aria-label="Decorative projector">
-        <div class="projector-device__lens"><span></span></div>
-        <div class="projector-device__vents" aria-hidden="true"></div>
-        <div class="projector-device__indicator" aria-hidden="true"></div>
-        <div class="projector-device__foot" aria-hidden="true"></div>
-      </div>
-    </div>
-  </main>
+      <!-- Sleek horizontal projector: intentionally layered above the light beam -->
+      <div class="projector-device" aria-label="Decorative projector">
+        <div class="projector-device__lens"><span></span></div>
+        <div class="projector-device__vents" aria-hidden="true"></div>
+        <div class="projector-device__indicator" aria-hidden="true"></div>
+        <div class="projector-device__foot" aria-hidden="true"></div>
+      </div>
+    </div>
+  </main>
 
-  <footer class="footer projector-footer">
-    <span>© <span id="current-year"></span> Tanisha Sharma</span>
-    <span>Designed with intention <span class="footer-dot">●</span></span>
-  </footer>
+  <footer class="footer projector-footer">
+    <span>© <span id="current-year"></span> Tanisha Sharma</span>
+    <span>Designed with intention <span class="footer-dot">●</span></span>
+  </footer>
 
-  <script src="main.js"></script>
+  <script src="main.js"></script>
 </body>
 </html>
