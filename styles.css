@@ -556,3 +556,576 @@ section[id] {
     scroll-behavior: auto !important;
   }
 }
+
+
+/* =========================================================
+   PROJECTOR PORTFOLIO OVERRIDES
+   The original Bedimcode styles above are retained. These
+   rules adapt the existing class system to a four-panel scene.
+   ========================================================= */
+:root {
+  --projector-blue: #356cff;
+  --projector-ink: #101a34;
+  --projector-muted: #6d7892;
+  --projector-line: rgba(16, 26, 52, .12);
+}
+html { scroll-behavior: auto; }
+body.projector-portfolio {
+  margin: 0;
+  color: var(--projector-ink);
+  background: #fff;
+  font-family: "Poppins", sans-serif;
+  overflow-x: hidden;
+}
+.projector-portfolio .l-header {
+  height: 4.5rem;
+  background: rgba(255,255,255,.96);
+  border-bottom: 1px solid var(--projector-line);
+  box-shadow: none;
+  z-index: 100;
+}
+.projector-portfolio .nav {
+  height: 100%;
+}
+.projector-portfolio .nav__logo {
+  color: var(--projector-ink);
+  font-weight: 700;
+  letter-spacing: -.04em;
+}
+.logo-dot, .footer-dot { color: var(--projector-blue); }
+.projector-portfolio .nav__list { margin: 0; padding: 0; list-style: none; }
+.projector-portfolio .nav__item { margin-bottom: 0; }
+.projector-portfolio .nav__link {
+  color: #66708a;
+  font-size: .88rem;
+  font-weight: 600;
+  padding: .6rem 0;
+}
+.projector-portfolio .nav__link::after,
+.projector-portfolio .nav__link:hover::after,
+.projector-portfolio .nav__link.active::after {
+  top: auto;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  background: var(--projector-blue);
+}
+.projector-portfolio .nav__toggle {
+  border: 0;
+  background: transparent;
+  color: var(--projector-ink);
+}
+.projector-main { margin-top: 4.5rem; }
+.projector-stage {
+  position: relative;
+  isolation: isolate;
+  min-height: 690px;
+  height: calc(100svh - 7.5rem);
+  overflow: hidden;
+  background:
+    radial-gradient(ellipse at 50% 100%, rgba(218,230,255,.45), transparent 46%),
+    linear-gradient(180deg, #fff 0%, #fff 74%, #fbfcff 100%);
+}
+.projector-stage::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  left: 0; right: 0; bottom: 10%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #dbe5fb, transparent);
+}
+.stage-meta {
+  position: absolute;
+  z-index: 10;
+  top: 27px;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  color: #8490a8;
+  font: 500 .62rem "Courier New", monospace;
+  letter-spacing: .14em;
+}
+.stage-meta-left { left: clamp(22px, 5vw, 76px); }
+.stage-meta-right { right: clamp(22px, 5vw, 76px); }
+#scene-number { color: var(--projector-blue); }
+.meta-slash { padding: 0 5px; color: #c0c9d9; }
+.status-dot { width: 7px; height: 7px; border-radius: 50%; background: #4bc99b; }
+.scene-index {
+  position: absolute;
+  z-index: 12;
+  left: clamp(18px, 4vw, 60px);
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+.scene-index__button {
+  position: relative;
+  padding: 10px 8px;
+  border: 0;
+  background: transparent;
+  color: #9aa4b7;
+  font: 600 .68rem "Courier New", monospace;
+  cursor: pointer;
+}
+.scene-index__button:not(:last-child)::after {
+  content: "";
+  display: block;
+  width: 1px;
+  height: 17px;
+  margin: 10px auto 0;
+  background: #d8e0ef;
+}
+.scene-index__button.active { color: var(--projector-blue); }
+.projection-beam {
+  position: absolute;
+  z-index: 0;
+  left: 50%;
+  bottom: 4.7%;
+  width: min(68vw, 850px);
+  height: min(43vw, 440px);
+  transform-origin: 50% 100%;
+  transform: translateX(-50%) rotate(-67.5deg);
+  clip-path: polygon(49.4% 100%, 50.6% 100%, 100% 0, 0 0);
+  background: linear-gradient(0deg, rgba(73,130,255,.015), rgba(93,148,255,.065) 60%, rgba(104,157,255,.16));
+  filter: blur(.5px);
+  transition: transform .85s cubic-bezier(.22,1,.36,1), opacity .45s;
+  pointer-events: none;
+}
+.projection-beam::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(100deg, transparent 42%, rgba(255,255,255,.7) 50%, rgba(92,146,255,.22) 52%, transparent 62%);
+}
+.projector-stage[data-scene="home"] .projection-beam { transform: translateX(-50%) rotate(-67.5deg); }
+.projector-stage[data-scene="skills"] .projection-beam { transform: translateX(-50%) rotate(-22.5deg); }
+.projector-stage[data-scene="work"] .projection-beam { transform: translateX(-50%) rotate(22.5deg); }
+.projector-stage[data-scene="contact"] .projection-beam { transform: translateX(-50%) rotate(67.5deg); }
+.projection-floor-glow {
+  position: absolute;
+  z-index: 1;
+  bottom: 1.5%;
+  left: 50%;
+  width: 280px;
+  height: 55px;
+  transform: translateX(-50%);
+  border-radius: 50%;
+  background: radial-gradient(ellipse, rgba(60,111,255,.24), transparent 70%);
+  filter: blur(10px);
+  pointer-events: none;
+}
+.projector-device {
+  position: absolute;
+  z-index: 20;
+  left: 50%;
+  bottom: 2.2%;
+  transform: translateX(-50%);
+  width: clamp(210px, 23vw, 350px);
+  height: 54px;
+  border: 1px solid #9aa4b4;
+  border-radius: 999px;
+  background: linear-gradient(180deg, #fdfefe 0%, #d8dde6 16%, #4b5360 28%, #222a36 58%, #101722 83%, #586171 100%);
+  box-shadow: 0 12px 23px rgba(23,37,65,.24), inset 0 2px 3px rgba(255,255,255,.9), inset 0 -3px 4px rgba(0,0,0,.38);
+}
+.projector-device__lens {
+  position: absolute;
+  top: 50%;
+  left: 13px;
+  width: 39px;
+  height: 39px;
+  transform: translateY(-50%);
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: radial-gradient(circle, #0c1830 0 48%, #9ba9bd 51% 58%, #171f2d 62% 100%);
+  border: 1px solid #8d9bb0;
+  box-shadow: 0 0 12px rgba(53,108,255,.32);
+}
+.projector-device__lens span {
+  display: block;
+  width: 27px;
+  height: 27px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 38% 35%, #d5fbff 0 8%, #65d7ff 16%, #176dff 36%, #07327e 60%, #06142f 76%);
+  box-shadow: 0 0 12px rgba(43,133,255,.95), 0 0 25px rgba(53,108,255,.42);
+}
+.projector-device__vents {
+  position: absolute;
+  left: 68px;
+  right: 17px;
+  top: 50%;
+  height: 20px;
+  transform: translateY(-50%);
+  border-radius: 4px;
+  background: repeating-linear-gradient(180deg, transparent 0 3px, rgba(0,0,0,.6) 3px 5px);
+  opacity: .9;
+}
+.projector-device__indicator {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  width: 5px;
+  height: 5px;
+  transform: translateY(-50%);
+  border-radius: 50%;
+  background: #6fbcff;
+  box-shadow: 0 0 7px #4599ff;
+}
+.projector-device__foot {
+  position: absolute;
+  z-index: -1;
+  left: 22%; right: 22%; bottom: -7px;
+  height: 8px;
+  border-radius: 0 0 7px 7px;
+  background: linear-gradient(#7c8594, #d8dde6);
+}
+.scene-panel {
+  position: absolute;
+  z-index: 4;
+  top: 15%;
+  left: 13%;
+  width: min(760px, 68vw);
+  max-height: 70%;
+  overflow: auto;
+  padding: clamp(24px, 3vw, 43px);
+  border: 1px solid rgba(218,229,250,.9);
+  border-radius: 4px;
+  background: linear-gradient(115deg, rgba(255,255,255,.94), rgba(255,255,255,.82));
+  box-shadow: 0 18px 55px rgba(70,103,166,.075), inset 0 0 0 1px rgba(255,255,255,.8);
+  backdrop-filter: blur(7px);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateX(35px) scale(.99);
+  transition: opacity .35s ease, transform .62s cubic-bezier(.22,1,.36,1), visibility .35s;
+}
+.scene-panel[hidden] { display: none !important; }
+.scene-panel.is-active {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateX(0) scale(1);
+}
+.scene-panel.is-leaving-left { transform: translateX(-35px) scale(.99); opacity: 0; }
+.scene-panel.is-leaving-right { transform: translateX(35px) scale(.99); opacity: 0; }
+.panel-kicker {
+  margin-bottom: 19px;
+  color: #7b89a6;
+  font: 600 .62rem "Courier New", monospace;
+  letter-spacing: .16em;
+}
+.projector-portfolio .section-title {
+  position: relative;
+  margin: 0 0 22px;
+  color: var(--projector-ink);
+  font-size: clamp(2.3rem, 4.2vw, 4.4rem);
+  line-height: 1.08;
+  letter-spacing: -.065em;
+  font-weight: 700;
+  text-align: left;
+}
+.projector-portfolio .section-title::after { display: none; }
+.projector-portfolio .home__title {
+  margin-bottom: 18px;
+  font-size: clamp(2.5rem, 4.6vw, 4.6rem);
+  line-height: 1.06;
+  letter-spacing: -.065em;
+  font-weight: 700;
+}
+.projector-portfolio .home__title-color { color: var(--projector-blue); }
+.home-panel { left: 9%; top: 14%; width: min(900px, 76vw); }
+.home-panel__content { display: grid; grid-template-columns: 1.2fr .8fr; align-items: center; gap: clamp(18px, 4vw, 60px); }
+.home-intro { color: var(--projector-ink); font-weight: 600; font-size: .96rem; line-height: 1.75; }
+.home-about { max-width: 570px; color: var(--projector-muted); font-size: .86rem; line-height: 1.85; }
+.home-actions { display: flex; align-items: center; flex-wrap: wrap; gap: 18px; margin-top: 23px; }
+.projector-portfolio .button {
+  display: inline-flex; align-items: center; gap: 10px;
+  border: 0; border-radius: 5px; padding: .9rem 1.2rem;
+  background: var(--projector-blue); color: #fff; font-size: .82rem;
+  box-shadow: 0 7px 17px rgba(53,108,255,.17);
+}
+.projector-portfolio .button:hover { transform: translateY(-2px); box-shadow: 0 10px 22px rgba(53,108,255,.25); }
+.quiet-link { display: inline-flex; align-items: center; gap: 5px; color: var(--projector-ink); font-size: .82rem; font-weight: 600; border-bottom: 1px solid #bdcced; padding-bottom: 4px; }
+.quiet-link:hover { color: var(--projector-blue); }
+.projector-portfolio .home__social { display: flex; flex-direction: row; gap: 13px; margin-top: 22px; }
+.projector-portfolio .home__social-icon { margin: 0; color: var(--projector-ink); }
+.home-visual {
+  position: relative; display: grid; place-items: center; min-height: 260px;
+  overflow: hidden; background: radial-gradient(circle, #f4f7ff, rgba(255,255,255,0) 70%);
+}
+.home-visual__orbit { position: absolute; width: 220px; height: 220px; border: 1px solid #dbe5fb; border-radius: 50%; }
+.home-visual__orbit::before, .home-visual__orbit::after { content:""; position:absolute; inset:20px; border:1px solid #e6edfc; border-radius:50%; }
+.home-visual__orbit::after { inset:42px; border-style:dashed; }
+.home-visual__monogram { position: relative; color: #356cff; font-size: clamp(4rem, 7vw, 7rem); font-weight: 700; letter-spacing: -.1em; }
+.home-visual__monogram span { color: #9db8ff; }
+.home-visual__caption { position:absolute; bottom:10px; color:#8996b1; font: .54rem "Courier New",monospace; letter-spacing:.14em; }
+.skills-panel { left: 21%; top: 12%; width: min(790px, 68vw); }
+.projector-portfolio .skills__container { display: grid; grid-template-columns: 1.25fr .75fr; gap: 40px; text-align: left; align-items: center; }
+.projector-portfolio .skills__subtitle { margin-bottom: 10px; font-size: 1.15rem; }
+.projector-portfolio .skills__text { margin-bottom: 18px; color: var(--projector-muted); font-size: .86rem; }
+.projector-portfolio .skills__data {
+  display: grid; grid-template-columns: minmax(135px, 1fr) minmax(70px, 1.2fr) auto;
+  gap: 14px; align-items: center; padding: .6rem .1rem; margin-bottom: 10px;
+  border-radius: 0; box-shadow: none; border-bottom: 1px solid #edf1f8; font-size: .82rem;
+}
+.projector-portfolio .skills__names { gap: 9px; }
+.projector-portfolio .skills__icon { margin: 0; font-size: 1.35rem; }
+.projector-portfolio .skills__percentage { color: #7e8aa3; font-size: .68rem; font-weight: 400; }
+.projector-portfolio .skills__bar { position: static; height: 5px; border-radius: 10px; background: #e7edfb; }
+.projector-portfolio .skills__bar::after { content:""; display:block; height:100%; border-radius:inherit; background:linear-gradient(90deg,#356cff,#8fb0ff); }
+.projector-portfolio .skills__python::after { width:88%; }
+.projector-portfolio .skills__anaplan::after { width:90%; }
+.projector-portfolio .skills__sql::after { width:76%; }
+.projector-portfolio .skills__powerbi::after { width:78%; }
+.projector-portfolio .skills__ml::after { width:74%; }
+.skills-side-note { min-height: 230px; display:flex; flex-direction:column; justify-content:center; align-items:center; padding:25px; background:linear-gradient(145deg,#f5f8ff,#e8efff); text-align:center; }
+.skills-side-note__number { color:#9cb8ff; font-size:4.5rem; font-weight:700; letter-spacing:-.08em; }
+.skills-side-note p { margin: 5px 0 20px; color:#6b7895; line-height:1.65; }
+.skills-side-note strong { color:var(--projector-ink); }
+.skills-side-note__small { font: .52rem "Courier New",monospace; color:#8996b1; letter-spacing:.1em; }
+.skills-disclaimer { margin: 13px 0 0; color:#9aa4b6; font-size:.62rem; }
+.work-panel { left: 19%; top: 12%; width: min(920px, 73vw); }
+.projector-portfolio .work__container { display:grid; grid-template-columns:1.25fr .75fr; gap:20px; padding:0; }
+.project-card { min-width:0; border:1px solid #e4ebf8; background:rgba(255,255,255,.78); }
+.project-art { height:190px; position:relative; overflow:hidden; background:linear-gradient(145deg,#f1f5ff,#dce7ff); }
+.project-art__horizon { position:absolute; top:42%; left:-5%; width:110%; height:1px; background:#bdcef4; transform:rotate(-12deg); }
+.project-art__road { position:absolute; left:24%; right:24%; bottom:-20%; height:95%; background:linear-gradient(90deg,#9ba9c4,#e9eef9,#9ba9c4); clip-path:polygon(45% 0,55% 0,100% 100%,0 100%); }
+.project-art__lane { position:absolute; bottom:0; left:50%; height:70%; width:2px; background:#fff; transform:perspective(100px) rotateX(20deg); }
+.project-art__lane--two { left:43%; height:50%; opacity:.6; }
+.project-art__label { position:absolute; left:15px; bottom:12px; color:#526b9b; font: .55rem "Courier New",monospace; letter-spacing:.12em; }
+.project-card__body { padding:22px; }
+.project-card__eyebrow { color:#7e8ca7; font:600 .57rem "Courier New",monospace; letter-spacing:.12em; }
+.project-card h3 { margin:10px 0; font-size:1.35rem; line-height:1.2; letter-spacing:-.04em; }
+.project-card p { color:var(--projector-muted); font-size:.78rem; line-height:1.75; }
+.project-tags { display:flex; flex-wrap:wrap; gap:6px; margin:14px 0 18px; }
+.project-tags span { border:1px solid #dce5f6; padding:5px 8px; color:#75829c; font-size:.61rem; }
+.project-card--text { padding:24px; display:flex; flex-direction:column; justify-content:center; background:linear-gradient(145deg,#fbfcff,#f1f5ff); }
+.project-card__monogram { margin:25px 0; color:#356cff; font-size:2.6rem; font-weight:700; letter-spacing:-.07em; }
+.project-card__monogram span { color:#a2baff; padding:0 6px; }
+.contact-panel { left: 14%; top: 15%; width: min(900px, 76vw); }
+.contact-layout { display:grid; grid-template-columns:1fr .9fr; gap:45px; align-items:center; }
+.contact-copy p { color:var(--projector-muted); font-size:.9rem; line-height:1.8; margin-bottom:22px; }
+.projector-portfolio .contact__form { width:100%; padding:0; }
+.projector-portfolio .contact__input { display:block; width:100%; margin-bottom:12px; border:1px solid #dce4f2; border-radius:4px; font:400 .82rem "Poppins",sans-serif; background:#fff; }
+.projector-portfolio .contact__input:focus { border-color:#8eacff; }
+.projector-portfolio .contact__button { margin-left:0; display:inline-flex; align-items:center; gap:8px; font:600 .82rem "Poppins",sans-serif; }
+.contact-form-note { margin:10px 0 0; color:#9aa4b6; font-size:.62rem; line-height:1.6; }
+.visually-hidden { position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0; }
+.projector-footer {
+  min-height: 3rem; padding: .75rem clamp(22px,5vw,76px);
+  display:flex; justify-content:space-between; align-items:center; gap:20px;
+  background:#fff; color:#8994a9; font-size:.66rem; font-weight:400;
+}
+.projector-footer p { margin:0; }
+@media (min-width: 768px) {
+  .projector-portfolio .nav__item { margin-left: clamp(18px, 3vw, 42px); }
+  .projector-portfolio .nav__link { color:#65708a; }
+}
+@media (max-width: 767px) {
+  .projector-portfolio .l-header { height:4rem; }
+  .projector-portfolio .nav { height:4rem; }
+  .projector-portfolio .nav__menu {
+    position:fixed; top:4rem; right:-100%; width:min(82%,320px); height:auto;
+    padding:1rem 1.4rem 1.4rem; background:#fff; border:1px solid #edf1f8;
+    box-shadow:0 15px 30px rgba(16,26,52,.08); transition:right .3s ease;
+  }
+  .projector-portfolio .nav__menu.show { right:0; }
+  .projector-portfolio .nav__list { display:flex; flex-direction:column; gap:8px; }
+  .projector-portfolio .nav__item { margin:0; }
+  .projector-portfolio .nav__link { display:inline-block; color:#65708a; }
+  .projector-main { margin-top:4rem; }
+  .projector-stage { height:auto; min-height:790px; }
+  .stage-meta { top:18px; font-size:.48rem; gap:5px; }
+  .stage-meta-left { left:15px; }
+  .stage-meta-right { right:15px; }
+  .meta-slash { padding:0 1px; }
+  .scene-index { left:50%; top:auto; bottom:92px; transform:translateX(-50%); flex-direction:row; gap:7px; }
+  .scene-index__button { padding:8px 10px; }
+  .scene-index__button:not(:last-child)::after { display:none; }
+  .projection-beam { width:115vw; height:350px; bottom:4%; }
+  .projector-device { bottom:2%; width:210px; height:47px; }
+  .projector-device__lens { width:34px; height:34px; left:10px; }
+  .projector-device__lens span { width:23px; height:23px; }
+  .projector-device__vents { left:58px; right:15px; height:17px; }
+  .projection-floor-glow { bottom:1%; width:220px; }
+  .scene-panel, .home-panel, .skills-panel, .work-panel, .contact-panel {
+    left:48px; right:16px; top:10%; width:auto; max-width:none;
+    max-height:calc(100% - 245px); overflow-y:auto; padding:21px;
+  }
+  .home-panel__content, .projector-portfolio .skills__container,
+  .projector-portfolio .work__container, .contact-layout { grid-template-columns:1fr; gap:20px; }
+  .projector-portfolio .home__title { font-size:clamp(2rem,8vw,3rem); }
+  .projector-portfolio .section-title { font-size:clamp(2rem,7vw,2.8rem); }
+  .home-visual { min-height:100px; }
+  .home-visual__orbit { width:100px; height:100px; }
+  .home-visual__monogram { font-size:3rem; }
+  .home-visual__caption { bottom:0; font-size:.44rem; }
+  .projector-portfolio .skills__data { grid-template-columns:minmax(100px,1fr) minmax(50px,.8fr) auto; gap:7px; font-size:.7rem; }
+  .skills-side-note { min-height:100px; padding:12px; }
+  .skills-side-note__number { font-size:2rem; }
+  .skills-side-note p { margin:0 0 8px; }
+  .project-art { height:125px; }
+  .project-card__body, .project-card--text { padding:15px; }
+  .project-card__monogram { margin:12px 0; font-size:2rem; }
+  .contact-layout { gap:15px; }
+  .contact-copy p { font-size:.8rem; margin-bottom:12px; }
+  .projector-portfolio .contact__input { padding:.75rem; margin-bottom:8px; }
+  .projector-footer { padding:.7rem 15px; font-size:.56rem; }
+}
+@media (max-width: 380px) {
+  .stage-meta-left { max-width:66%; }
+  .stage-meta-right { font-size:.44rem; }
+  .scene-panel, .home-panel, .skills-panel, .work-panel, .contact-panel { left:42px; right:10px; padding:16px; }
+  .projector-portfolio .home__title { font-size:1.9rem; }
+  .projector-portfolio .skills__data { grid-template-columns:1fr auto; }
+  .projector-portfolio .skills__bar { grid-column:1 / -1; grid-row:2; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration:.01ms !important; transition-duration:.01ms !important; }
+}
+
+
+/* =========================================================
+   IMMERSIVE PROJECTION REFINEMENT
+   Removes inner card scrolling and lets content sit more
+   naturally inside the projected light.
+   ========================================================= */
+.projector-stage {
+  min-height: 650px;
+  height: calc(100svh - 7.5rem);
+  overflow: hidden;
+}
+.scene-panel,
+.home-panel,
+.skills-panel,
+.work-panel,
+.contact-panel {
+  max-height: none;
+  overflow: visible;
+  border: 1px solid rgba(221, 232, 255, .18);
+  border-radius: 2px;
+  background: rgba(255, 255, 255, .30);
+  box-shadow: none;
+  backdrop-filter: blur(1.5px);
+  -webkit-backdrop-filter: blur(1.5px);
+  padding: clamp(24px, 3vw, 44px);
+}
+.scene-panel::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background: linear-gradient(110deg, rgba(255,255,255,.36), rgba(255,255,255,.08) 75%, transparent);
+}
+.home-panel {
+  left: 10%;
+  top: 13%;
+  width: min(1080px, 79vw);
+}
+.home-panel__content {
+  grid-template-columns: minmax(0, 1.45fr) minmax(180px, .55fr);
+  gap: clamp(20px, 3vw, 48px);
+}
+.projector-portfolio .home__title {
+  max-width: 760px;
+  font-size: clamp(2.45rem, 4vw, 4.15rem);
+  line-height: 1.08;
+  overflow-wrap: normal;
+  word-break: normal;
+}
+.home-intro { max-width: 650px; }
+.home-about { max-width: 640px; }
+.home-visual { min-height: 240px; }
+.skills-panel {
+  left: 17%;
+  top: 11%;
+  width: min(940px, 76vw);
+}
+.projector-portfolio .skills__container {
+  grid-template-columns: minmax(0, 1.3fr) minmax(190px, .7fr);
+  gap: clamp(24px, 4vw, 54px);
+}
+.projector-portfolio .skills__data {
+  grid-template-columns: minmax(130px, 1fr) minmax(80px, 1fr) auto;
+}
+.work-panel {
+  left: 13%;
+  top: 10%;
+  width: min(1120px, 81vw);
+}
+.projector-portfolio .work__container {
+  grid-template-columns: minmax(0, 1.2fr) minmax(220px, .8fr);
+}
+.project-card { background: rgba(255,255,255,.42); }
+.project-card--text { background: rgba(241,246,255,.46); }
+.contact-panel {
+  left: 13%;
+  top: 14%;
+  width: min(1080px, 79vw);
+}
+.contact-layout {
+  grid-template-columns: minmax(0, 1fr) minmax(280px, .85fr);
+  gap: clamp(28px, 4vw, 58px);
+}
+.projector-portfolio .section-title {
+  font-size: clamp(2.4rem, 4vw, 4rem);
+}
+.projection-beam {
+  opacity: .92;
+  filter: blur(.2px);
+}
+.projector-stage[data-scene="home"] .projection-beam,
+.projector-stage[data-scene="skills"] .projection-beam,
+.projector-stage[data-scene="work"] .projection-beam,
+.projector-stage[data-scene="contact"] .projection-beam {
+  transition: transform .95s cubic-bezier(.22,1,.36,1), opacity .5s ease;
+}
+@media (max-height: 780px) and (min-width: 768px) {
+  .projector-stage { height: 700px; }
+  .home-panel, .skills-panel, .work-panel, .contact-panel { top: 8%; }
+  .projector-portfolio .home__title { font-size: clamp(2.2rem, 3.5vw, 3.4rem); }
+  .home-visual { min-height: 190px; }
+  .projector-portfolio .section-title { font-size: clamp(2.2rem, 3.4vw, 3.4rem); }
+}
+@media (max-width: 767px) {
+  .projector-stage {
+    min-height: 900px;
+    height: auto;
+    overflow: hidden;
+  }
+  .scene-panel, .home-panel, .skills-panel, .work-panel, .contact-panel {
+    left: 48px;
+    right: 14px;
+    top: 9%;
+    width: auto;
+    max-height: none;
+    overflow: visible;
+    padding: 20px;
+    background: rgba(255,255,255,.44);
+    border-color: rgba(221,232,255,.25);
+    backdrop-filter: blur(1px);
+  }
+  .home-panel__content,
+  .projector-portfolio .skills__container,
+  .projector-portfolio .work__container,
+  .contact-layout {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 20px;
+  }
+  .projector-portfolio .home__title {
+    font-size: clamp(2rem, 7.4vw, 3rem);
+    line-height: 1.08;
+  }
+  .home-visual { min-height: 110px; }
+  .home-visual__orbit { width: 110px; height: 110px; }
+  .projector-portfolio .section-title { font-size: clamp(2rem, 7vw, 2.8rem); }
+  .skills-side-note { min-height: 130px; }
+  .project-art { height: 135px; }
+  .projector-device { position: absolute; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .scene-panel, .projection-beam { transition: none !important; }
+}
