@@ -1,193 +1,179 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#ffffff">
+  <title>Tanisha Sharma | Portfolio</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css" rel="stylesheet">
+</head>
+<body class="projector-portfolio">
+  <!-- Header: original Bedimcode navigation structure retained -->
+  <header class="l-header">
+    <nav class="nav bd-grid" aria-label="Main navigation">
+      <div><a href="#home" class="nav__logo" data-scene-link="home">Tanisha<span class="logo-dot">.</span></a></div>
+      <div class="nav__menu" id="nav-menu">
+        <ul class="nav__list">
+          <li class="nav__item"><a href="#home" class="nav__link active" data-scene-link="home">Home</a></li>
+          <li class="nav__item"><a href="#skills" class="nav__link" data-scene-link="skills">Skills</a></li>
+          <li class="nav__item"><a href="#work" class="nav__link" data-scene-link="work">Projects</a></li>
+          <li class="nav__item"><a href="#contact" class="nav__link" data-scene-link="contact">Contact</a></li>
+        </ul>
+      </div>
+      <button class="nav__toggle" id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false" type="button">
+        <i class="bx bx-menu"></i>
+      </button>
+    </nav>
+  </header>
 
-        <link rel="stylesheet" href="styles.css">
+  <main class="l-main projector-main">
+    <div class="projector-stage" id="portfolio-stage" data-scene="home">
+      <div class="stage-meta stage-meta-left"><span class="status-dot"></span> PERSONAL PORTFOLIO <span class="meta-slash">/</span> </div>
+      
 
-        <!-- =====BOX ICONS===== -->
-        <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
+      <aside class="scene-index" aria-label="Portfolio sections">
+        <button class="scene-index__button active" type="button" data-scene-link="home" aria-label="Go to Home">01</button>
+        <button class="scene-index__button" type="button" data-scene-link="skills" aria-label="Go to Skills">02</button>
+        <button class="scene-index__button" type="button" data-scene-link="work" aria-label="Go to Projects">03</button>
+        <button class="scene-index__button" type="button" data-scene-link="contact" aria-label="Go to Contact">04</button>
+      </aside>
 
-        <title>Portfolio website complete</title>
-    </head>
-    <body>
-        <!--===== HEADER =====-->
-        <header class="l-header">
-            <nav class="nav bd-grid">
-                <div>
-                    <a href="#" class="nav__logo">Tanisha</a>
-                </div>
+      <div class="projection-beam" aria-hidden="true"></div>
+      <div class="projection-floor-glow" aria-hidden="true"></div>
 
-                <div class="nav__menu" id="nav-menu">
-                    <ul class="nav__list">
-                        <li class="nav__item"><a href="#home" class="nav__link active">Home</a></li>
-                        <li class="nav__item"><a href="#about" class="nav__link">About</a></li>
-                        <li class="nav__item"><a href="#skills" class="nav__link">Skills</a></li>
-                        <li class="nav__item"><a href="#work" class="nav__link">Projects</a></li>
-                        <li class="nav__item"><a href="#contact" class="nav__link">Contact</a></li>
-                    </ul>
-                </div>
+      <!-- HOME + ABOUT: combined into one panel -->
+      <section class="scene-panel home-panel is-active" id="home" data-panel="home" aria-labelledby="home-title">
+        <div class="panel-kicker">HELLO, </div>
+        <div class="home-panel__content">
+          <div class="home__data">
+            <h1 class="home__title" id="home-title">HI I'm Tanisha Sharma Junior Developer at
+           <span class="home__title-color">ABInBev GCC India</span> </h1>
+            <p class="home-intro">I'm Tanisha Sharma — a Computer Science graduate from TIET with an AI specialization, interested in data, financial planning, and practical AI solutions.</p>
+            <p class="home-about">My experience spans working on analytics workflows and AI projects. I enjoy turning complex problems into clear, useful outcomes — and yes, I'm an avid car enthusiast.</p>
+            <div class="home-actions">
+              <!-- Replace the # below with the URL/path to your resume PDF -->
+              <a href="#" class="button" id="resume-link">My Resume <i class="bx bx-up-right-arrow-alt"></i></a>
+              <a href="https://www.linkedin.com/" class="quiet-link" target="_blank" rel="noreferrer">Connect with me <i class="bx bx-right-arrow-alt"></i></a>
+            </div>
+            <div class="home__social">
+              <!-- Replace these profile URLs with your exact profile links if needed -->
+              <a href="https://www.linkedin.com/" class="home__social-icon" aria-label="LinkedIn" target="_blank" rel="noreferrer"><i class="bx bxl-linkedin"></i></a>
+              <a href="https://github.com/Tanishasharma11" class="home__social-icon" aria-label="GitHub" target="_blank" rel="noreferrer"><i class="bx bxl-github"></i></a>
+            </div>
+          </div>
+          <div class="home-visual" aria-hidden="true">
+            <div class="home-visual__orbit"></div>
+            <div class="home-visual__monogram">TS<span>.</span></div>
+            <div class="home-visual__caption">TECHNOLOGY · DATA · IDEAS</div>
+          </div>
+        </div>
+      </section>
 
-                <div class="nav__toggle" id="nav-toggle">
-                    <i class='bx bx-menu'></i>
-                </div>
-            </nav>
-        </header>
+      <!-- SKILLS: existing Bedimcode skills content and classes retained -->
+      <section class="scene-panel skills-panel" id="skills" data-panel="skills" aria-labelledby="skills-title" hidden>
+        <div class="panel-kicker">TOOLS & TECHNOLOGIES</div>
+        <h2 class="section-title" id="skills-title">Skills<span class="home__title-color">.</span></h2>
+        <div class="skills__container bd-grid">
+          <div>
+            <h3 class="skills__subtitle">Technical toolkit</h3>
+            <p class="skills__text">A mix of programming, analytics, and planning tools I have worked with.</p>
+            <div class="skills__data">
+              <div class="skills__names"><i class="bx bxl-python skills__icon"></i><span class="skills__name">Python</span></div>
+              <div class="skills__bar skills__python"></div><div><span class="skills__percentage">AI / data</span></div>
+            </div>
+            <div class="skills__data">
+              <div class="skills__names"><i class="bx bx-grid-alt skills__icon"></i><span class="skills__name">Anaplan</span></div>
+              <div class="skills__bar skills__anaplan"></div><div><span class="skills__percentage">Planning</span></div>
+            </div>
+            <div class="skills__data">
+              <div class="skills__names"><i class="bx bx-data skills__icon"></i><span class="skills__name">SQL & Data</span></div>
+              <div class="skills__bar skills__sql"></div><div><span class="skills__percentage">Analytics</span></div>
+            </div>
+            <div class="skills__data">
+              <div class="skills__names"><i class="bx bx-bar-chart-alt-2 skills__icon"></i><span class="skills__name">Power BI</span></div>
+              <div class="skills__bar skills__powerbi"></div><div><span class="skills__percentage">Reporting</span></div>
+            </div>
+            <div class="skills__data">
+              <div class="skills__names"><i class="bx bx-brain skills__icon"></i><span class="skills__name">Machine Learning</span></div>
+              <div class="skills__bar skills__ml"></div><div><span class="skills__percentage">AI projects</span></div>
+            </div>
+          </div>
+          <div class="skills-side-note">
+            
+            <p>Learn continuously.<br><strong>Build thoughtfully.</strong></p>
+            <span class="skills-side-note__small">PROGRAMMING / PLANNING / ANALYTICS</span>
+          </div>
+        </div>
+        <p class="skills-disclaimer">Skill bars are visual indicators, not formal proficiency scores.</p>
+      </section>
 
-        <main class="l-main">
-            <!--===== HOME =====-->
-            <section class="home bd-grid" id="home">
-                <div class="home__data">
-                    <h1 class="home__title">Hi,<br>I'm <span class="home__title-color">Tanisha Sharma</span><br> Junior Developer at <br> ABInBev GCC India </h1>
+      <!-- PROJECTS: original project name and GitHub URL retained -->
+      <section class="scene-panel work-panel" id="work" data-panel="work" aria-labelledby="work-title" hidden>
+        <div class="panel-kicker">SELECTED WORK</div>
+        <h2 class="section-title" id="work-title">Projects<span class="home__title-color">.</span></h2>
+        <div class="work__container bd-grid">
+          <article class="project-card">
+            <div class="project-art" aria-label="Stylized computer vision road illustration">
+              <div class="project-art__horizon"></div><div class="project-art__road"></div>
+              <div class="project-art__lane project-art__lane--one"></div><div class="project-art__lane project-art__lane--two"></div>
+              <span class="project-art__label">COMPUTER VISION / 01</span>
+            </div>
+            <div class="project-card__body">
+              <div class="project-card__eyebrow">IMAGE PROCESSING</div>
+              <h3>Finding Lanes in Image</h3>
+              <p>A computer-vision project focused on identifying road lanes in images using image-processing techniques.</p>
+              <div class="project-tags"><span>Python</span><span>OpenCV</span><span>Computer Vision</span></div>
+              <a class="quiet-link" href="https://github.com/Tanishasharma11/Finding-Lanes-In-Image" target="_blank" rel="noreferrer">View project on GitHub <i class="bx bx-up-right-arrow-alt"></i></a>
+            </div>
+          </article>
+          <article class="project-card project-card--text">
+            <div class="project-card__eyebrow">MORE COMING SOON</div>
+            <div class="project-card__monogram">AI<span>×</span>DATA</div>
+            <h3>Ideas into useful outcomes.</h3>
+            <p>This space can feature additional AI/ADAS work, data workflows, and financial planning solutions as you choose which projects to publish.</p>
+            <a class="quiet-link" href="https://github.com/Tanishasharma11" target="_blank" rel="noreferrer">Explore my GitHub <i class="bx bx-up-right-arrow-alt"></i></a>
+          </article>
+        </div>
+      </section>
 
-                    <a href="#" class="button">My Resume</a>
-                </div>
+      <!-- CONTACT: existing fields retained; submit opens the visitor's email app -->
+      <section class="scene-panel contact-panel" id="contact" data-panel="contact" aria-labelledby="contact-title" hidden>
+        <div class="panel-kicker">LET'S CONNECT</div>
+        <div class="contact-layout">
+          <div class="contact-copy">
+            <h2 class="section-title" id="contact-title">Let's make something <span class="home__title-color">meaningful.</span></h2>
+            <p>I'm open to conversations about technology, analytics, AI, and interesting opportunities.</p>
+            <a href="https://github.com/Tanishasharma11" class="quiet-link" target="_blank" rel="noreferrer">GitHub <i class="bx bx-up-right-arrow-alt"></i></a>
+          </div>
+          <form class="contact__form" id="contact-form">
+            <label class="visually-hidden" for="contact-name">Name</label>
+            <input type="text" id="contact-name" placeholder="Name" class="contact__input" required>
+            <label class="visually-hidden" for="contact-email">Email</label>
+            <input type="email" id="contact-email" placeholder="Email" class="contact__input" required>
+            <label class="visually-hidden" for="contact-message">Message</label>
+            <textarea id="contact-message" placeholder="Message" rows="4" class="contact__input" required></textarea>
+            <button type="submit" class="contact__button button">Compose email <i class="bx bx-send"></i></button>
+            <p class="contact-form-note">This opens your email app; it does not send or store messages on this website.</p>
+          </form>
+        </div>
+      </section>
 
-                <div class="home__social">
-                    <a href="" class="home__social-icon"><i class='bx bxl-linkedin'></i></a>
-                    <a href="" class="home__social-icon"><i class='bx bxl-github' ></i></a>
-                </div>
+      <!-- Sleek horizontal projector: intentionally layered above the light beam -->
+      <div class="projector-device" aria-label="Decorative projector">
+        <div class="projector-device__lens"><span></span></div>
+        <div class="projector-device__vents" aria-hidden="true"></div>
+        <div class="projector-device__indicator" aria-hidden="true"></div>
+        <div class="projector-device__foot" aria-hidden="true"></div>
+      </div>
+    </div>
+  </main>
 
-                <div class="home__img">
-                    <svg class="home__blob" viewBox="0 0 479 467" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                        <mask id="mask0" mask-type="alpha">
-                            <path d="M9.19024 145.964C34.0253 76.5814 114.865 54.7299 184.111 29.4823C245.804 6.98884 311.86 -14.9503 370.735 14.143C431.207 44.026 467.948 107.508 477.191 174.311C485.897 237.229 454.931 294.377 416.506 344.954C373.74 401.245 326.068 462.801 255.442 466.189C179.416 469.835 111.552 422.137 65.1576 361.805C17.4835 299.81 -17.1617 219.583 9.19024 145.964Z"/>
-                        </mask>
-                        <g mask="url(#mask0)">
-                            <path d="M9.19024 145.964C34.0253 76.5814 114.865 54.7299 184.111 29.4823C245.804 6.98884 311.86 -14.9503 370.735 14.143C431.207 44.026 467.948 107.508 477.191 174.311C485.897 237.229 454.931 294.377 416.506 344.954C373.74 401.245 326.068 462.801 255.442 466.189C179.416 469.835 111.552 422.137 65.1576 361.805C17.4835 299.81 -17.1617 219.583 9.19024 145.964Z"/>
-                            <image class="home__blob-img" x="50" y="60" href="https://idsb.tmgrup.com.tr/ly/uploads/images/2021/05/30/118050.jpg"/>
-                        </g>
-                    </svg>
-                </div>
-            </section>
+  <footer class="footer projector-footer">
+    <span>© <span id="current-year"></span> Tanisha Sharma</span>
+    <span>Designed with intention <span class="footer-dot">●</span></span>
+  </footer>
 
-            <!--===== ABOUT =====-->
-            <section class="about section " id="about">
-                <h2 class="section-title">About</h2>
-
-                <div class="about__container bd-grid">
-                    <div class="about__img">
-                        <img src="https://media.licdn.com/dms/image/v2/D5603AQEtzGI8i-S8AA/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1709537055466?e=1793232000&v=beta&t=VkLZjczTZZsaE3cfcypZn7NvM1__gpQrcgWqs4pFQ8w" alt="">
-                    </div>
-                    
-                    <div>
-                        <h2 class="about__subtitle">My name is Tanisha Sharma</h2>
-                        <p class="about__text">TIET CS Grad and Junior Developer at AB InBev GCC India. Avid Car Enthusiast. Love the word Spaingit. </p>           
-                    </div>                                   
-                </div>
-            </section>
-
-            <!--===== SKILLS =====-->
-            <section class="skills section" id="skills">
-                <h2 class="section-title">Skills</h2>
-
-                <div class="skills__container bd-grid">          
-                    <div>
-                        <h2 class="skills__subtitle">Languages</h2>
-                        <p class="skills__text">Here:</p>
-                        <div class="skills__data">
-                            <div class="skills__names">
-                                <i class='bx bxl-html5 skills__icon'></i>
-                                <span class="skills__name">HTML5</span>
-                            </div>
-                            <div class="skills__bar skills__html">
-
-                            </div>
-                            <div>
-                                <span class="skills__percentage">95%</span>
-                            </div>
-                        </div>
-                        <div class="skills__data">
-                            <div class="skills__names">
-                                <i class='bx bxl-css3 skills__icon'></i>
-                                <span class="skills__name">CSS3</span>
-                            </div>
-                            <div class="skills__bar skills__css">
-                                
-                            </div>
-                            <div>
-                                <span class="skills__percentage">85%</span>
-                            </div>
-                        </div>
-                        <div class="skills__data">
-                            <div class="skills__names">
-                                <i class='bx bxl-javascript skills__icon' ></i>
-                                <span class="skills__name">JAVASCRIPT</span>
-                            </div>
-                            <div class="skills__bar skills__js">
-                                
-                            </div>
-                            <div>
-                                <span class="skills__percentage">65%</span>
-                            </div>
-                        </div>
-                        <div class="skills__data">
-                            <div class="skills__names">
-                                <i class='bx bxs-paint skills__icon'></i>
-                                <span class="skills__name">C++</span>
-                            </div>
-                            <div class="skills__bar skills__ux">
-                                
-                            </div>
-                            <div>
-                                <span class="skills__percentage">85%</span>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div>              
-                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSoUT35hcOLwso6E1n12ANkNo0ufw2pmIdoO7_bjF6Dp_1XFi_SWvV5gLgX&s=10" alt="" class="skills__img">
-                    </div>
-                </div>
-            </section>
-
-            <!--===== WORK =====-->
-            <section class="work section" id="work">
-                <h2 class="section-title">Projects</h2>
-
-                <div class="work__container bd-grid">
-                    <a href="" class="work__img">
-                        <img src="https://idsb.tmgrup.com.tr/ly/uploads/images/2021/05/30/118050.jpg" alt="">
-                        Finding Lanes 
-                        
-                    </a>
-                    <a href="https://github.com/Tanishasharma11/Finding-Lanes-In-Image">Click here for the link to the project</a>
-                </div>
-            </section>
-
-            <!--===== CONTACT =====-->
-            <section class="contact section" id="contact">
-                <h2 class="section-title">Contact Me</h2>
-
-                <div class="contact__container bd-grid">
-                    <form action="" class="contact__form">
-                        <input type="text" placeholder="Name" class="contact__input">
-                        <input type="mail" placeholder="Email" class="contact__input">
-                        <textarea placeholder="Message" name="" id="" cols="0" rows="10" class="contact__input"></textarea>
-                        <input type="button" value="Catch up soon" class="contact__button button">
-                    </form>
-                </div>
-            </section>
-        </main>
-
-        <!--===== FOOTER =====-->
-        <footer class="footer">
-            <p class="footer__title">Tanisha Sharma</p>
-            <div class="footer__social">
-            <p>GitHub link : https://github.com/Tanishasharma11</p>   
-            </div>
-            <p class="footer__copy">&#169; All rigths reserved</p>
-        </footer>
-
-
-        <!-- Smooth scrolling -->
-        <script src="https://unpkg.com/lenis@1.3.26/dist/lenis.min.js"></script>
-
-       <!-- Existing scroll reveal library -->
-       <script src="https://unpkg.com/scrollreveal"></script>
-
-      <!-- Your website JavaScript -->
-      <script src="main.js"></script>
-    </body>
+  <script src="main.js"></script>
+</body>
 </html>
