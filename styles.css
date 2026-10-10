@@ -1172,3 +1172,8 @@ body.projector-portfolio {
 .projector-portfolio .scene-index {
   display: none !important;
 }
+
+/* Move the Skills illustration slightly downward */
+.projector-portfolio .skills-side-image {
+  transform: translateY(20px);
+}
